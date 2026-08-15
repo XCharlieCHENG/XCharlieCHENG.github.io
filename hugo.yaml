@@ -1,0 +1,87 @@
+baseURL: "https://charliecheng.cc/"
+locale: "en-us"
+title: "Xiang (Charlie) Cheng"
+theme: "PaperMod"
+
+enableRobotsTXT: true
+enableEmoji: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+pagination:
+  pagerSize: 20
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "Xiang (Charlie) Cheng"
+  description: "Xiang Cheng (Charlie) is a Ph.D. student in Information Systems at the Robert H. Smith School of Business, University of Maryland, College Park. His research covers the economic impacts and business applications of generative AI."
+  author: "Xiang Cheng"
+  keywords:
+    - generative AI
+    - information systems
+    - large language models
+    - analytical modeling
+
+  defaultTheme: auto
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
+  ShowToc: false
+  disableAnchoredHeadings: true
+  disableSpecial1stPost: true
+
+  # Points at a section that does not exist, so the homepage renders only
+  # content/_index.md and lists no posts underneath it.
+  mainSections:
+    - posts
+
+  footer:
+    text: "Design adapted from [Raveesh Mayya](https://raveeshmayya.com)."
+
+  socialIcons:
+    - name: googlescholar
+      title: "Google Scholar"
+      url: "https://scholar.google.com/citations?hl=en&user=IRNpDrIAAAAJ"
+    - name: linkedin
+      title: "LinkedIn"
+      url: "https://www.linkedin.com/in/xiang-charlie-cheng"
+    - name: email
+      title: "Email"
+      url: "mailto:xccheng@umd.edu"
+
+  assets:
+    disableHLJS: true
+    disableFingerprinting: false
+
+menu:
+  main:
+    - identifier: research
+      name: Research
+      url: /research/
+      weight: 10
+    - identifier: teaching
+      name: Teaching
+      url: /teaching/
+      weight: 20
+    - identifier: cv
+      name: CV
+      url: /cv/
+      weight: 30
+    - identifier: misc
+      name: Miscellaneous
+      url: /misc/
+      weight: 40
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
