@@ -19,10 +19,32 @@ Everything you edit lives in `content/`, as plain Markdown:
 Images go in `static/images/`, files (the CV PDF) in `static/files/`. Site-wide
 settings (title, nav menu, social links, footer) are in `hugo.yaml`.
 
+## Where this lives
+
+```
+~/Library/CloudStorage/GoogleDrive-xccheng@umd.edu/My Drive/Personal Website
+```
+
+The folder sits inside Google Drive, so its path contains spaces and needs
+quoting in the shell. A shortcut in `~/.zshrc` saves the typing:
+
+```bash
+alias website='cd "$HOME/Library/CloudStorage/GoogleDrive-xccheng@umd.edu/My Drive/Personal Website"'
+```
+
+Google Drive on this machine intermittently refuses file operations and has
+corrupted git refs before. If git reports a detached HEAD, a missing object, or
+an `EPERM`, delete the folder and clone it again:
+
+```bash
+git clone --recurse-submodules https://github.com/XCharlieCHENG/XCharlieCHENG.github.io.git
+```
+
+Anything already pushed is safe on GitHub, so nothing is lost.
+
 ## Preview locally
 
 ```bash
-cd ~/Sites/charliecheng.cc
 hugo server -D
 ```
 
@@ -30,8 +52,10 @@ Then open <http://localhost:1313>. The page reloads as you save.
 
 ## Publish
 
+Stage the files you changed by name:
+
 ```bash
-git add -A
+git add content/research.md
 git commit -m "Update research page"
 git push
 ```
