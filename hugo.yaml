@@ -44,9 +44,6 @@ params:
   mainSections:
     - posts
 
-  footer:
-    text: "Design adapted from [Raveesh Mayya](https://raveeshmayya.com)."
-
   socialIcons:
     - name: googlescholar
       title: "Google Scholar"

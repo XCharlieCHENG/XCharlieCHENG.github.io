@@ -9,9 +9,10 @@ modeling, causal inference, deep reinforcement learning, and experiments.
 
 ## Economics of Generative AI and Agents
 
-This stream studies markets in which firms and consumers delegate decisions to
-AI. I use game-theoretic models to characterize how such delegation changes
-competition, contracting, and the quality of the content these systems produce.
+This stream asks what happens to a market once generative AI enters it as a
+participant. I use game-theoretic models to characterize the effects on
+competition between firms, on the contracts they write with one another, and on
+their incentives to invest in quality.
 
 ### Incentive Issues in Developing Factual LLMs
 
@@ -23,32 +24,10 @@ Xiang Cheng and Manmohan Aseri
 &nbsp;·&nbsp;
 [Presentation](https://www.youtube.com/watch?v=TueymA4LLYg)
 
-The advent of large language models (LLMs) has drastically lowered the cost of
-producing misinformation, leading to an explosion in its volume and making
-fact-fiction distinctions increasingly difficult. Paradoxically, the same LLMs
-can also be powerful tools for fact-checking and factual content generation,
-provided they can access high-quality factual data. Such factual data are
-primarily produced by traditional news organizations and other content
-providers, for whom fact collection is a costly process, and they may not have
-enough incentive to share these facts with LLMs. We study the incentives for
-fact sharing between LLMs and content providers using a game-theoretic model,
-in which the two parties first jointly bargain over the level of content
-sharing and then choose their investments in factual quality respectively. We
-show that content providers with low monetizability may partner with LLMs
-without any compensation. Interestingly, such partnerships reduce the LLM's
-factual quality. This is because partnership reduces the competition between
-the LLM and the content provider, which leads both parties to invest less in
-factual quality. The factual quality of LLMs improves only when they partner
-with providers with highly monetizable content. However, such content providers
-require financial compensation for partnering with LLMs. We then allow the
-bargaining to include a monetary transfer from the LLM to the content provider
-and find, counterintuitively, that such compensation can further reduce the
-LLM's factual quality compared to no compensation, when the content provider's
-monetizability is low or moderate. This is because the compensation further
-reduces competition between the LLM and the content provider, thereby reducing
-the content provider's incentive to exert effort in fact collection. Our
-results highlight nuances in the partnership between LLMs and content providers
-and show that such partnerships do not always yield a more factual LLM.
+<details class="abstract">
+<summary>Abstract</summary>
+<p>The advent of large language models (LLMs) has drastically lowered the cost of producing misinformation, leading to an explosion in its volume and making fact-fiction distinctions increasingly difficult. Paradoxically, the same LLMs can also be powerful tools for fact-checking and factual content generation, provided they can access high-quality factual data. Such factual data are primarily produced by traditional news organizations and other content providers, for whom fact collection is a costly process, and they may not have enough incentive to share these facts with LLMs. We study the incentives for fact sharing between LLMs and content providers using a game-theoretic model, in which the two parties first jointly bargain over the level of content sharing and then choose their investments in factual quality respectively. We show that content providers with low monetizability may partner with LLMs without any compensation. Interestingly, such partnerships reduce the LLM's factual quality. This is because partnership reduces the competition between the LLM and the content provider, which leads both parties to invest less in factual quality. The factual quality of LLMs improves only when they partner with providers with highly monetizable content. However, such content providers require financial compensation for partnering with LLMs. We then allow the bargaining to include a monetary transfer from the LLM to the content provider and find, counterintuitively, that such compensation can further reduce the LLM's factual quality compared to no compensation, when the content provider's monetizability is low or moderate. This is because the compensation further reduces competition between the LLM and the content provider, thereby reducing the content provider's incentive to exert effort in fact collection. Our results highlight nuances in the partnership between LLMs and content providers and show that such partnerships do not always yield a more factual LLM.</p>
+</details>
 
 Recipient of the UMD Faculty-Student Research Award. Presented at WITS 2025, AI
 and the Future of Work at Wharton 2025, and BizAI 2025.
@@ -63,36 +42,10 @@ Xiang Cheng and Manmohan Aseri
 
 [Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6839464)
 
-There is sufficient evidence in both the academic literature and the popular
-press that machine learning algorithms can collude. When firms price their
-products using machine learning algorithms, the algorithms can, after several
-interactions, determine that a collusive price is the best price. In this
-paper, we use a game-theoretic model to study methods for breaking AI
-collusion. Much of the discussion of algorithmic collusion centers on the
-collusion among producer-side algorithms. However, the use of AI on the
-consumer side is also rapidly growing, especially with the rise of Agentic AI.
-Many consumers increasingly delegate product search, comparison, and purchase
-decisions to consumer-facing AI agents, such as the ChatGPT agent and Amazon's
-Alexa shopping assistant. We propose a method in which such consumer AI
-providers can strategically inject demand noise into the market to break
-collusion. The consumer AI can do this by randomizing the purchases of a small
-fraction of subscribed consumers. The collusion of producer-side algorithms
-heavily relies on their ability to monitor each other's actions and tacitly
-punish (by undercutting the price) if any collusive partner deviates from the
-collusive price. Strategically induced demand noise hampers this monitoring
-ability and makes it easy for producer firms to deviate from collusion without
-being detected by the rival (due to noise); thus, it breaks the collusion by
-incentivizing deviation from it. We establish the robustness of this method
-when the producer-side algorithms strategically react to such noise injection.
-We also analyze how strategic adoption of AI by consumers affects the
-effectiveness of our method and characterize the conditions under which the
-method continues to break collusion. We find that although the objective of
-consumer AI providers is to maximize their own profits instead of maximizing
-consumer surplus, their presence always increases consumer surplus due to the
-breaking of collusion. Our analysis also reveals how the demand noise can be
-optimally designed depending on the market characteristics to increase the
-chances of breaking collusion. Our results contribute to the ongoing debate on
-algorithmic collusion and provide policy recommendations.
+<details class="abstract">
+<summary>Abstract</summary>
+<p>There is sufficient evidence in both the academic literature and the popular press that machine learning algorithms can collude. When firms price their products using machine learning algorithms, the algorithms can, after several interactions, determine that a collusive price is the best price. In this paper, we use a game-theoretic model to study methods for breaking AI collusion. Much of the discussion of algorithmic collusion centers on the collusion among producer-side algorithms. However, the use of AI on the consumer side is also rapidly growing, especially with the rise of Agentic AI. Many consumers increasingly delegate product search, comparison, and purchase decisions to consumer-facing AI agents, such as the ChatGPT agent and Amazon's Alexa shopping assistant. We propose a method in which such consumer AI providers can strategically inject demand noise into the market to break collusion. The consumer AI can do this by randomizing the purchases of a small fraction of subscribed consumers. The collusion of producer-side algorithms heavily relies on their ability to monitor each other's actions and tacitly punish (by undercutting the price) if any collusive partner deviates from the collusive price. Strategically induced demand noise hampers this monitoring ability and makes it easy for producer firms to deviate from collusion without being detected by the rival (due to noise); thus, it breaks the collusion by incentivizing deviation from it. We establish the robustness of this method when the producer-side algorithms strategically react to such noise injection. We also analyze how strategic adoption of AI by consumers affects the effectiveness of our method and characterize the conditions under which the method continues to break collusion. We find that although the objective of consumer AI providers is to maximize their own profits instead of maximizing consumer surplus, their presence always increases consumer surplus due to the breaking of collusion. Our analysis also reveals how the demand noise can be optimally designed depending on the market characteristics to increase the chances of breaking collusion. Our results contribute to the ongoing debate on algorithmic collusion and provide policy recommendations.</p>
+</details>
 
 Presented at Fisher AI in Business 2026, WAICI 2026, POMS 2026, BizAI 2026, and
 AI/ML 2025.
@@ -105,18 +58,15 @@ Xiang Cheng, Manmohan Aseri, Siva Viswanathan, and Esther Gal-Or
 
 *Work in progress*
 
-Publishers have responded to large language models in sharply different ways,
-some licensing their content and others blocking access or litigating. We
-develop a game-theoretic model of licensing contracts that govern two distinct
-rights, retrieval and training, and characterize when each belongs in an
-efficient contract.
+A game-theoretic model of licensing between publishers and large language
+models, separating the right to retrieve content from the right to train on it.
 
 ## LLMs for Research and Decision-Making
 
-This stream treats large language models as instruments and asks where they
-substitute for human judgment. Two papers examine LLMs as research
-infrastructure, for annotating data and for standing in for human subjects. Two
-others study how AI changes the decisions that people themselves reach.
+This stream treats large language models as instruments and asks what they
+change about how evidence is produced and how decisions are reached. Two papers
+develop and validate LLMs as research infrastructure. Two others study how AI
+shapes the decisions that people reach.
 
 ### To Err Is Human; To Annotate, SILICON? Toward Robust Reproducibility in LLM Annotation
 
@@ -126,32 +76,10 @@ Xiang Cheng, Raveesh Mayya, and João Sedoc
 
 [Paper](https://arxiv.org/abs/2412.14461)
 
-Unstructured text data annotation is foundational to management research. LLMs
-offer a cost-effective and scalable alternative to human annotation, but they
-introduce a novel challenge: the annotator itself can be retired. Proprietary
-models undergo regular deprecation cycles, threatening long-term
-reproducibility. Hence, the ability to reproduce annotation results when the
-original model becomes unavailable, that is, robust reproducibility, is a
-central methodological challenge for LLM-based annotation. Achieving robust
-reproducibility requires first controlling measurement error. We develop an
-analytical framework that decomposes measurement error into four sources:
-guideline-induced error from inconsistent annotation criteria, baseline-induced
-error from unreliable human references, prompt-induced error from suboptimal
-meta-instruction, and model-induced error from architectural differences across
-LLMs. We develop the SILICON workflow that instantiates the analytical
-framework, prescribing targeted interventions at each error source. Empirical
-validation across nine management research tasks confirms that these
-interventions reduce measurement error, and simulations show that the resulting
-error reduction yields more accurate downstream statistical estimates. With
-measurement error controlled, we address two further aspects of robust
-reproducibility. First, we propose a regression-based methodology to establish
-backup open-weight models, which are permanently accessible. Every tested task
-has at least one open-weight model with no statistically detectable performance
-difference. Second, we quantify the upper bound of annotation quality
-attainable from the current set of available models by proposing a routing
-procedure that selectively sends low-confidence items to auxiliary models,
-revealing when model aggregation improves performance and when that may
-adversely affect labeling quality.
+<details class="abstract">
+<summary>Abstract</summary>
+<p>Unstructured text data annotation is foundational to management research. LLMs offer a cost-effective and scalable alternative to human annotation, but they introduce a novel challenge: the annotator itself can be retired. Proprietary models undergo regular deprecation cycles, threatening long-term reproducibility. Hence, the ability to reproduce annotation results when the original model becomes unavailable, that is, robust reproducibility, is a central methodological challenge for LLM-based annotation. Achieving robust reproducibility requires first controlling measurement error. We develop an analytical framework that decomposes measurement error into four sources: guideline-induced error from inconsistent annotation criteria, baseline-induced error from unreliable human references, prompt-induced error from suboptimal meta-instruction, and model-induced error from architectural differences across LLMs. We develop the SILICON workflow that instantiates the analytical framework, prescribing targeted interventions at each error source. Empirical validation across nine management research tasks confirms that these interventions reduce measurement error, and simulations show that the resulting error reduction yields more accurate downstream statistical estimates. With measurement error controlled, we address two further aspects of robust reproducibility. First, we propose a regression-based methodology to establish backup open-weight models, which are permanently accessible. Every tested task has at least one open-weight model with no statistically detectable performance difference. Second, we quantify the upper bound of annotation quality attainable from the current set of available models by proposing a routing procedure that selectively sends low-confidence items to auxiliary models, revealing when model aggregation improves performance and when that may adversely affect labeling quality.</p>
+</details>
 
 Presented at BizAI 2026, WISE 2025, AI/ML 2025, CIST 2025, Business and
 Generative AI at Wharton 2025, WAICI 2025, SCECR 2025, BizAI 2025, and WITS
@@ -169,33 +97,10 @@ Xiang Cheng and Wen Wang
 &nbsp;·&nbsp;
 [ICIS 2025 Proceedings](https://aisel.aisnet.org/icis2025/gen_ai/gen_ai/33/)
 
-Understanding consumer privacy preferences and decision-making is central to
-businesses and policymakers, yet large-scale surveys and experiments remain
-costly. As large language models (LLMs) increasingly mediate privacy-sensitive
-interactions, understanding their privacy-related behavioral patterns is
-critical for both research methodology and anticipating AI-mediated privacy
-outcomes. We investigate whether LLMs can serve as a usable research
-infrastructure for privacy research through three stages: (1) establishing
-whether LLMs exhibit behavioral patterns consistent with a privacy mindset, (2)
-calibrating them to align with human responses, and (3) deploying them to
-delineate the boundaries of their utility. In the Foundation stage, we
-benchmark LLM responses against human subjects and find that LLMs exhibit
-higher concern levels than humans on privacy preferences while adopting more
-relaxed stances in real-world decision-making scenarios. In the Calibration
-stage, we propose a methodology integrating multi-persona modeling, Generative
-Adversarial Networks, and interpretable machine learning to reduce the
-systematic gap between LLM and human responses. Our approach generates
-calibrated synthetic personas grounded in empirically identified
-privacy-relevant attributes. In the Deployment stage, we examine whether
-calibrated synthetic participants can reproduce established privacy findings.
-By systematically replicating published privacy experiments, we find that a
-substantial share of findings is reproduced. The pattern of successes and
-failures reveals a spectrum of privacy cognition: LLMs reliably replicate
-findings grounded in analytical, semantic reasoning but fail where mechanisms
-involve non-analytical processing such as heuristic framing or
-experiential-economic mechanisms. Our study provides a scalable tool for
-generating synthetic human privacy responses with clear boundary conditions for
-reliable application.
+<details class="abstract">
+<summary>Abstract</summary>
+<p>Understanding consumer privacy preferences and decision-making is central to businesses and policymakers, yet large-scale surveys and experiments remain costly. As large language models (LLMs) increasingly mediate privacy-sensitive interactions, understanding their privacy-related behavioral patterns is critical for both research methodology and anticipating AI-mediated privacy outcomes. We investigate whether LLMs can serve as a usable research infrastructure for privacy research through three stages: (1) establishing whether LLMs exhibit behavioral patterns consistent with a privacy mindset, (2) calibrating them to align with human responses, and (3) deploying them to delineate the boundaries of their utility. In the Foundation stage, we benchmark LLM responses against human subjects and find that LLMs exhibit higher concern levels than humans on privacy preferences while adopting more relaxed stances in real-world decision-making scenarios. In the Calibration stage, we propose a methodology integrating multi-persona modeling, Generative Adversarial Networks, and interpretable machine learning to reduce the systematic gap between LLM and human responses. Our approach generates calibrated synthetic personas grounded in empirically identified privacy-relevant attributes. In the Deployment stage, we examine whether calibrated synthetic participants can reproduce established privacy findings. By systematically replicating published privacy experiments, we find that a substantial share of findings is reproduced. The pattern of successes and failures reveals a spectrum of privacy cognition: LLMs reliably replicate findings grounded in analytical, semantic reasoning but fail where mechanisms involve non-analytical processing such as heuristic framing or experiential-economic mechanisms. Our study provides a scalable tool for generating synthetic human privacy responses with clear boundary conditions for reliable application.</p>
+</details>
 
 Presented at ICIS 2025, INFORMS Workshop on Data Science 2025, INFORMS Annual
 Meeting 2025, and AI Lightning Talks at UMD Smith 2025.
@@ -210,26 +115,10 @@ Xiang Cheng, Wen Wang, and Anindya Ghose
 
 [Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5903562)
 
-Artificial Intelligence (AI) models increasingly drive high-stakes consumer
-interactions, yet their decision logic often remains opaque. Prevailing
-explainable AI techniques, such as feature attribution methods, fail to provide
-coherent narratives behind model decisions. Large language models (LLMs)
-present an opportunity to generate natural-language explanations, but three
-design challenges remain unresolved: explanations must be decision-correct and
-aligned with the factors that drive the prediction; explanations should serve
-multiple audiences without shifting the underlying decisions; and the system
-should be trainable in a label-efficient way. To address these challenges, we
-introduce LEXMA (LLM-based EXplanations for Multi-Audience decisions), a
-reinforcement-learning-based fine-tuning framework that produces
-audience-appropriate explanations. LEXMA combines reflection-augmented
-supervised fine-tuning with Group Relative Policy Optimization (GRPO). It
-fine-tunes separate parameter sets to improve decision correctness and satisfy
-stylistic requirements for different audiences, using reward signals that do
-not rely on human-annotated explanations. We instantiate LEXMA in the mortgage
-approval context. LEXMA yields significant improvements in predictive
-performance over other LLM baselines. Human evaluations further show that
-expert-facing explanations from LEXMA are more risk-focused, while
-consumer-facing explanations are clearer, more actionable, and more polite.
+<details class="abstract">
+<summary>Abstract</summary>
+<p>Artificial Intelligence (AI) models increasingly drive high-stakes consumer interactions, yet their decision logic often remains opaque. Prevailing explainable AI techniques, such as feature attribution methods, fail to provide coherent narratives behind model decisions. Large language models (LLMs) present an opportunity to generate natural-language explanations, but three design challenges remain unresolved: explanations must be decision-correct and aligned with the factors that drive the prediction; explanations should serve multiple audiences without shifting the underlying decisions; and the system should be trainable in a label-efficient way. To address these challenges, we introduce LEXMA (LLM-based EXplanations for Multi-Audience decisions), a reinforcement-learning-based fine-tuning framework that produces audience-appropriate explanations. LEXMA combines reflection-augmented supervised fine-tuning with Group Relative Policy Optimization (GRPO). It fine-tunes separate parameter sets to improve decision correctness and satisfy stylistic requirements for different audiences, using reward signals that do not rely on human-annotated explanations. We instantiate LEXMA in the mortgage approval context. LEXMA yields significant improvements in predictive performance over other LLM baselines. Human evaluations further show that expert-facing explanations from LEXMA are more risk-focused, while consumer-facing explanations are clearer, more actionable, and more polite.</p>
+</details>
 
 Presented at CIST 2025 and INFORMS Workshop on Data Science 2025.
 
@@ -241,10 +130,9 @@ Xiang Cheng, Eaman Jahani, and Siva Viswanathan
 
 *Work in progress, large-scale experiment underway*
 
-Groups often weigh contributions by confidence instead of competence, which
-distorts collective decisions. In a preregistered experiment, we study whether a
-generative AI assistant that questions a member's reasoning, without supplying
-answers, makes weakly grounded members more receptive to accurate peers.
+A preregistered experiment on whether an AI assistant that questions a group
+member's reasoning, without supplying answers, makes weakly grounded members
+more receptive to accurate peers.
 
 Supported by Smith Internal Research Grants in 2025 and 2026. Presented at WAICI
 2026, ACM Collective Intelligence 2026, and UMD Smith IS PhD Research

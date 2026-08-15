@@ -119,3 +119,43 @@
     border: 0;
     border-top: 1px solid var(--border);
 }
+
+
+/* Collapsible abstracts on the research page. */
+.post-content details.abstract {
+    margin: 0.9rem 0 0 0;
+    border-top: 1px solid var(--border);
+    padding-top: 0.55rem;
+}
+
+.post-content details.abstract > summary {
+    cursor: pointer;
+    list-style: none;
+    color: var(--secondary);
+    font-size: 0.92rem;
+    user-select: none;
+}
+
+.post-content details.abstract > summary::-webkit-details-marker {
+    display: none;
+}
+
+.post-content details.abstract > summary::before {
+    content: "\25B8";
+    display: inline-block;
+    width: 1em;
+    transition: transform 0.15s ease;
+}
+
+.post-content details.abstract[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.post-content details.abstract > summary:hover {
+    color: var(--primary);
+}
+
+.post-content details.abstract > p {
+    margin: 0.7rem 0 0.2rem 0;
+    font-size: 0.94rem;
+}

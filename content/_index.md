@@ -14,11 +14,12 @@ applications of generative AI. I approach these questions with analytical
 modeling, causal inference, deep reinforcement learning, and experiments.
 
 Two streams organize my work. The first is the economics of generative AI and
-the agents built on it. I study how competition, contracting, and content
-quality change once firms and consumers delegate their decisions to AI. The
-second treats large language models as instruments. I examine where they
-substitute for human judgment, both in how researchers annotate data and in how
-people reach decisions together.
+the agents built on it. I study what happens to competition, to the
+contracts firms write with one another, and to their incentives to invest in
+quality, once generative AI enters a market as a participant. The second treats
+large language models as instruments. I examine what they change about how
+evidence is produced and how decisions are reached, and where the limits of
+that use lie.
 
 You can find my papers on the [Research](/research/) page and the courses I
 teach on the [Teaching](/teaching/) page.

@@ -5,45 +5,25 @@ hideMeta: true
 
 ## Honors and Grants
 
-All of the following are from the University of Maryland.
-
-<div class="education">
-  <div class="edu-row">
-    <div class="edu-school">Smith Internal Research Grant</div>
-    <div class="edu-degree">$17,000</div>
-    <div class="edu-when">2026</div>
-  </div>
-  <div class="edu-row">
-    <div class="edu-school">Faculty-Student Research Award</div>
-    <div class="edu-degree">$15,000</div>
-    <div class="edu-when">2025</div>
-  </div>
-  <div class="edu-row">
-    <div class="edu-school">Smith Internal Research Grant</div>
-    <div class="edu-degree">$10,000</div>
-    <div class="edu-when">2025</div>
-  </div>
-  <div class="edu-row">
-    <div class="edu-school">International Conference Student Support Award</div>
-    <div class="edu-degree">$400</div>
-    <div class="edu-when">2024</div>
-  </div>
-  <div class="edu-row">
-    <div class="edu-school">Graduate Assistantship and Summer Fellowship</div>
-    <div class="edu-degree"></div>
-    <div class="edu-when">2024 to 2029</div>
-  </div>
-</div>
+- Smith Internal Research Grant, University of Maryland, $17,000 · 2026
+- Faculty-Student Research Award, University of Maryland, $15,000 · 2025
+- Smith Internal Research Grant, University of Maryland, $10,000 · 2025
+- International Conference Student Support Award, University of Maryland, $400 · 2024
+- Graduate Assistantship and Summer Fellowship, University of Maryland · 2024 to 2029
 
 ## Academic Service
 
-I review for *Information Systems Research*, beginning in 2025. I also serve as
-a conference reviewer for the International Conference on Information Systems
-(2025 and 2026), the Workshop on Information Technologies and Systems (2025),
-and the Hawaii International Conference on System Sciences (2024).
+- Journal reviewer, *Information Systems Research* · 2025 to present
+- Conference reviewer, International Conference on Information Systems (ICIS) · 2025, 2026
+- Conference reviewer, Workshop on Information Technologies and Systems (WITS) · 2025
+- Conference reviewer, Hawaii International Conference on System Sciences (HICSS) · 2024
 
 ## Elsewhere
 
 I occasionally write about the practice of doing a Ph.D., including the tools I
 find useful and the people I owe thanks to. Those posts are on the
 [Miscellaneous](/misc/) page.
+
+The design of this site is attributed to the website of [Raveesh
+Mayya](https://raveeshmayya.com), a great mentor and friend to me. I built it
+with the help of Claude Code.
