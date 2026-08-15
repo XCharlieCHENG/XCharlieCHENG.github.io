@@ -76,9 +76,9 @@ menu:
       name: CV
       url: /cv/
       weight: 30
-    - identifier: misc
-      name: Miscellaneous
-      url: /misc/
+    - identifier: impact
+      name: Impact
+      url: /impact/
       weight: 40
 
 markup:

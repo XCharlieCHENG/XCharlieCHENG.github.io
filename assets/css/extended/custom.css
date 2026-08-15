@@ -20,9 +20,12 @@
 /* Education list on the homepage: three columns on desktop, stacked on
    mobile. Deliberately not a Markdown table, so it inherits none of the
    theme's data-grid borders. */
+/* Proportional columns, not auto. A long first entry, for example the full
+   name of a conference, would otherwise take all the room and squeeze the
+   second column until its text broke mid-word. */
 .education {
     display: grid;
-    grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) max-content;
     margin: 1.2rem 0 2rem 0;
 }
 
@@ -68,7 +71,11 @@
         padding: 0.6rem 0;
     }
 
-    .education .edu-row > * {
+    /* The second selector matches the specificity of the desktop rule, (0,3,0),
+       which would otherwise keep drawing a rule above every single field once
+       the row stops being a grid. */
+    .education .edu-row > *,
+    .education .edu-row + .edu-row > * {
         padding: 0;
         border-top: none;
     }

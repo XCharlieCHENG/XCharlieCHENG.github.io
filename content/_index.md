@@ -11,15 +11,14 @@ Park](https://umd.edu/).
 
 My research interests primarily focus on economic impacts and business
 applications of generative AI. I approach these questions with analytical
-modeling, causal inference, deep reinforcement learning, experiments, and large
-language models.
+modeling, causal inference, deep reinforcement learning, and experiments.
 
-Three questions organize most of my current work. The first is how firms and
-platforms set incentives when the output of a large language model is costly to
-verify. The second is what happens to competition when both sides of a market
-delegate decisions to learning algorithms. The third is how large language
-models change the way researchers themselves collect, annotate, and interpret
-data.
+Two streams organize my work. The first is the economics of generative AI and
+the agents built on it. I study how competition, contracting, and content
+quality change once firms and consumers delegate their decisions to AI. The
+second treats large language models as instruments. I examine where they
+substitute for human judgment, both in how researchers annotate data and in how
+people reach decisions together.
 
 You can find my papers on the [Research](/research/) page and the courses I
 teach on the [Teaching](/teaching/) page.
