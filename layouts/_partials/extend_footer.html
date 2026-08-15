@@ -1,0 +1,21 @@
+{{/*
+    Overrides themes/PaperMod/layouts/_partials/extend_footer.html, which the
+    theme ships empty as a hook.
+
+    Accordion behaviour for the research page: opening one paper's abstract
+    closes whichever one was open. Without this, several long abstracts can be
+    expanded at once and the stream headings scroll far apart.
+*/}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const entries = document.querySelectorAll(".paper-list details");
+        entries.forEach(function (entry) {
+            entry.addEventListener("toggle", function () {
+                if (!entry.open) return;
+                entries.forEach(function (other) {
+                    if (other !== entry) other.open = false;
+                });
+            });
+        });
+    });
+</script>

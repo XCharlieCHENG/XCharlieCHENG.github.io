@@ -1,23 +1,21 @@
-/* Headshot on the homepage. The selector carries the .md-content prefix so it
-   outranks the theme's `.md-content img { margin: 1rem 0 }`. */
-.md-content img.profile-photo {
-    float: right;
-    width: 190px;
-    height: auto;
-    border-radius: 8px;
-    margin: 0.2rem 0 1.2rem 1.6rem;
+/* Homepage profile mode. The theme centres the block, rounds the headshot, and
+   lays out the section buttons; these rules only tighten the subtitle, whose
+   two paragraphs would otherwise inherit the theme's 1rem flex gap twice. */
+.profile .profile_inner span p {
+    margin: 0;
 }
 
-@media (max-width: 600px) {
-    .md-content img.profile-photo {
-        float: none;
-        display: block;
-        width: 170px;
-        margin: 0 auto 1.5rem auto;
-    }
+.profile .profile_inner span p + p {
+    margin-top: 1rem;
 }
 
-/* Education list on the homepage: three columns on desktop, stacked on
+/* Links inside the subtitle need the underline to read as links, because the
+   surrounding text is centred and carries no other affordance. */
+.profile .profile_inner span a {
+    text-decoration: underline;
+}
+
+/* Education list on the CV page: three columns on desktop, stacked on
    mobile. Deliberately not a Markdown table, so it inherits none of the
    theme's data-grid borders. */
 /* Proportional columns, not auto. A long first entry, for example the full
@@ -100,62 +98,39 @@
     background: var(--theme);
 }
 
-/* Paper entries on the research page. Pull the author line up under the
-   title, and space the rules between entries. */
-.post-content h3 {
-    margin-bottom: 0.3rem;
+/* Paper entries on the research page. Each entry is three lines, title then
+   authors then venue and links, and the whole block is the <summary>, so a
+   click anywhere on it reveals the abstract. The disclosure triangle is
+   suppressed because the title itself is the affordance. */
+.post-content .paper-list {
+    margin: 1.4rem 0 0 0;
+    padding-inline-start: 1.7rem;
 }
 
-.post-content h3 + p {
-    margin-top: 0;
+.post-content .paper-list li {
+    margin-bottom: 1.15rem;
 }
 
-.post-content h3 + p + p {
-    margin-top: 0.4rem;
-}
-
-.post-content hr {
-    margin: 2.4rem 0;
-    border: 0;
-    border-top: 1px solid var(--border);
-}
-
-
-/* Collapsible abstracts on the research page. */
-.post-content details.abstract {
-    margin: 0.9rem 0 0 0;
-    border-top: 1px solid var(--border);
-    padding-top: 0.55rem;
-}
-
-.post-content details.abstract > summary {
+.post-content .paper-list summary {
     cursor: pointer;
     list-style: none;
-    color: var(--secondary);
-    font-size: 0.92rem;
-    user-select: none;
+    line-height: 1.55;
 }
 
-.post-content details.abstract > summary::-webkit-details-marker {
+.post-content .paper-list summary::-webkit-details-marker {
     display: none;
 }
 
-.post-content details.abstract > summary::before {
-    content: "\25B8";
-    display: inline-block;
-    width: 1em;
-    transition: transform 0.15s ease;
+.post-content .paper-list summary strong:hover {
+    text-decoration: underline;
 }
 
-.post-content details.abstract[open] > summary::before {
-    transform: rotate(90deg);
-}
-
-.post-content details.abstract > summary:hover {
-    color: var(--primary);
-}
-
-.post-content details.abstract > p {
-    margin: 0.7rem 0 0.2rem 0;
-    font-size: 0.94rem;
+/* Specificity (0,2,0) beats the theme's `.post-content p` at (0,1,1), so the
+   abstract keeps its own spacing rather than the body-paragraph rhythm. */
+.post-content .paper-abstract {
+    margin: 0.65rem 0 0 0;
+    padding: 0.6rem 0.95rem;
+    border-left: 3px solid var(--tertiary);
+    font-size: 0.92em;
+    color: var(--secondary);
 }

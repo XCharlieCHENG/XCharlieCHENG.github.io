@@ -11,6 +11,18 @@ hideMeta: true
 - International Conference Student Support Award, University of Maryland, $400 · 2024
 - Graduate Assistantship and Summer Fellowship, University of Maryland · 2024 to 2029
 
+## Conference Presentations
+
+**2026** · ACM Collective Intelligence · BizAI · Fisher AI in Business · POMS ·
+WAICI · UMD Smith IS PhD Research Presentation
+
+**2025** · AI and the Future of Work at Wharton · AI Lightning Talks at UMD
+Smith · AI/ML · BizAI · Business and Generative AI at Wharton · CIST · ICIS ·
+INFORMS Annual Meeting · INFORMS Workshop on Data Science · SCECR · WAICI ·
+WISE · WITS
+
+**2024** · WITS
+
 ## Academic Service
 
 - Journal reviewer, *Information Systems Research* · 2025 to present

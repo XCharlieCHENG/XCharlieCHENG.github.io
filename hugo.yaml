@@ -39,8 +39,33 @@ params:
   disableAnchoredHeadings: true
   disableSpecial1stPost: true
 
-  # Points at a section that does not exist, so the homepage renders only
-  # content/_index.md and lists no posts underneath it.
+  # The homepage is PaperMod's profile mode: a centred headshot, name, a short
+  # subtitle, the social icons, and one button per section. The theme renders
+  # this partial INSTEAD of content/_index.md, so that file holds front matter
+  # only and every homepage string lives here.
+  profileMode:
+    enabled: true
+    title: "Xiang (Charlie) Cheng"
+    subtitle: |
+      I am a Ph.D. student in Information Systems at the [Robert H. Smith School of Business](https://www.rhsmith.umd.edu/), [University of Maryland, College Park](https://umd.edu/).
+
+      I work on the economics of generative AI and AI agents, and on large language models as instruments for research and decision-making.
+    imageUrl: "images/charlie.jpg"
+    imageTitle: "Xiang (Charlie) Cheng"
+    imageWidth: 160
+    imageHeight: 160
+    buttons:
+      - name: Research
+        url: /research/
+      - name: Teaching
+        url: /teaching/
+      - name: CV
+        url: /cv/
+      - name: Impact
+        url: /impact/
+
+  # Points at a section that does not exist, so nothing is listed underneath
+  # the homepage.
   mainSections:
     - posts
 

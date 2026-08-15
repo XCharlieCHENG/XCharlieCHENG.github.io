@@ -36,6 +36,11 @@
 </a>
 {{- end }}
 
+{{/* The theme calls this hook here. The first version of this override dropped
+     the call along with the "Powered by" span, which silently disabled
+     layouts/_partials/extend_footer.html. */}}
+{{- partial "extend_footer.html" . }}
+
 <script>
     let menu = document.getElementById('menu');
     if (menu) {
