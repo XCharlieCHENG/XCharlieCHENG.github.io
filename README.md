@@ -56,7 +56,28 @@ Body text.
 - `themes/PaperMod` is a git submodule. Clone with
   `git clone --recurse-submodules`. Update it with
   `git submodule update --remote --merge`.
-- `static/CNAME` holds the custom domain. Do not delete it; GitHub Pages reads
-  it on every deploy.
 - Old Google Sites URLs under `/blog/` redirect to `/misc/` via the `aliases`
   field in each post's front matter.
+
+## Switching the domain over to this site
+
+Until the DNS cutover, the site is served from
+<https://XCharlieCHENG.github.io> and `charliecheng.cc` still points at the old
+Google Sites page. There is deliberately no `static/CNAME` file, because its
+presence makes GitHub Pages redirect the `github.io` address to the custom
+domain, which would leave nothing to check against before the switch.
+
+At cutover, create the file and push:
+
+```bash
+printf 'charliecheng.cc\n' > static/CNAME
+git add static/CNAME && git commit -m "Point Pages at the custom domain" && git push
+```
+
+Then, at Namecheap under Domain List, Manage, Advanced DNS, add four A records
+on host `@` pointing at `185.199.108.153`, `185.199.109.153`, `185.199.110.153`
+and `185.199.111.153`, and change the `www` CNAME from `ghs.googlehosted.com`
+to `XCharlieCHENG.github.io.`.
+
+Leave the five `eforward*.registrar-servers.com` MX records and both TXT
+records alone. They run email forwarding for the domain.
