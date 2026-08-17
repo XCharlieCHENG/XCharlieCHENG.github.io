@@ -30,7 +30,6 @@ services:
     ID: G-JS83T5DML6
 
 params:
-  env: production
   title: "Xiang (Charlie) Cheng"
   description: "Xiang Cheng (Charlie) is a Ph.D. student in Information Systems at the Robert H. Smith School of Business, University of Maryland, College Park. His research covers the economic impacts and business applications of generative AI."
   author: "Xiang Cheng"
