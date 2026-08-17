@@ -42,12 +42,17 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      # baseURL comes from hugo.yaml, not from steps.pages.outputs.base_url.
+      # That output reports the scheme GitHub currently serves, which stayed
+      # http:// for a while after Enforce HTTPS was switched on. Building with
+      # it put http asset URLs into an https page, and the browser blocked the
+      # headshot as mixed content. The config value is the site's own truth.
       - name: Build
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --gc --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
