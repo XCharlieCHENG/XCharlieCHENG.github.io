@@ -1,0 +1,24 @@
+{{/*
+    Render hook for markdown links, so an outside link opens in its own tab
+    instead of replacing the page.
+
+    A link counts as outside when it parses to a host that is not this site's.
+    Relative links and in-page anchors parse to an empty host and are left
+    alone, as are schemes without a host such as mailto:.
+
+    This covers markdown-syntax links only. The hand-written <a> tags in
+    content/research.md are raw HTML, which goldmark passes through untouched;
+    those are handled by the script in layouts/_partials/extend_footer.html.
+
+    Every action below carries trim markers, and the file deliberately ends
+    without a trailing newline: whatever whitespace this template emits lands
+    inside the sentence, which put a space before the comma in the homepage
+    subtitle the first time round.
+*/}}
+{{- $u := urls.Parse .Destination -}}
+{{- $site := urls.Parse site.BaseURL -}}
+{{- $external := and $u.Host (ne $u.Host $site.Host) -}}
+<a href="{{ .Destination | safeURL }}"
+    {{- with .Title }} title="{{ . }}"{{ end }}
+    {{- if $external }} target="_blank" rel="noopener noreferrer"{{ end -}}
+>{{ .Text }}</a>

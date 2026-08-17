@@ -5,9 +5,35 @@
     Accordion behaviour for the research page: opening one paper's abstract
     closes whichever one was open. Without this, several long abstracts can be
     expanded at once and the stream headings scroll far apart.
+
+    Also sends outside links to their own tab. layouts/_markup/render-link.html
+    already does this for markdown links at build time; this pass catches the
+    raw <a> tags written directly into content/research.md, and any added
+    later, so a new paper link needs no attributes of its own.
 */}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // Internal links render as absolute baseURL URLs, so the site's own
+        // host counts as internal even when the page is served from somewhere
+        // else, such as the github.io address behind the custom domain.
+        // No jsonify here: inside a script block Go's contextual escaping
+        // already emits a quoted JS string, and jsonify on top of it produced
+        // a constant containing literal quote characters that matched nothing.
+        // .Hostname rather than .Host, since .Host carries the port and the
+        // DOM's link.hostname does not.
+        const siteHost = {{ (urls.Parse site.BaseURL).Hostname }};
+
+        document.querySelectorAll("a[href]").forEach(function (link) {
+            // An empty hostname means a relative link, an in-page anchor, or a
+            // scheme such as mailto:. An existing target is left as the author
+            // set it, which keeps the social icons' rel="me" intact.
+            if (!link.hostname || link.hostname === window.location.hostname) return;
+            if (link.hostname === siteHost) return;
+            if (link.target) return;
+            link.target = "_blank";
+            link.rel = link.rel ? link.rel + " noopener noreferrer" : "noopener noreferrer";
+        });
+
         const entries = document.querySelectorAll(".paper-list details");
         entries.forEach(function (entry) {
             entry.addEventListener("toggle", function () {
