@@ -6,6 +6,10 @@
     Relative links and in-page anchors parse to an empty host and are left
     alone, as are schemes without a host such as mailto:.
 
+    A PDF gets the same treatment even when it is our own file, since opening
+    one in place replaces the page just as an outside link does. It keeps
+    rel="noopener" without noreferrer, which only matters off-site.
+
     This covers markdown-syntax links only. The hand-written <a> tags in
     content/research.md are raw HTML, which goldmark passes through untouched;
     those are handled by the script in layouts/_partials/extend_footer.html.
@@ -18,7 +22,9 @@
 {{- $u := urls.Parse .Destination -}}
 {{- $site := urls.Parse site.BaseURL -}}
 {{- $external := and $u.Host (ne $u.Host $site.Host) -}}
+{{- $pdf := strings.HasSuffix (lower $u.Path) ".pdf" -}}
+{{- $rel := cond $external "noopener noreferrer" "noopener" -}}
 <a href="{{ .Destination | safeURL }}"
     {{- with .Title }} title="{{ . }}"{{ end }}
-    {{- if $external }} target="_blank" rel="noopener noreferrer"{{ end -}}
+    {{- if or $external $pdf }} target="_blank" rel="{{ $rel }}"{{ end -}}
 >{{ .Text }}</a>

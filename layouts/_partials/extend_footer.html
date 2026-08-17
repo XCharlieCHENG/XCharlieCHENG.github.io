@@ -25,13 +25,20 @@
 
         document.querySelectorAll("a[href]").forEach(function (link) {
             // An empty hostname means a relative link, an in-page anchor, or a
-            // scheme such as mailto:. An existing target is left as the author
-            // set it, which keeps the social icons' rel="me" intact.
-            if (!link.hostname || link.hostname === window.location.hostname) return;
-            if (link.hostname === siteHost) return;
+            // scheme such as mailto:.
+            const external = link.hostname
+                && link.hostname !== window.location.hostname
+                && link.hostname !== siteHost;
+            // Our own PDFs open in a new tab too: viewing one in place
+            // replaces the page just as an outside link does.
+            const pdf = /\.pdf$/i.test(link.pathname);
+            if (!external && !pdf) return;
+            // An existing target is left as the author set it, which keeps the
+            // social icons' rel="me" intact.
             if (link.target) return;
+            const rel = external ? "noopener noreferrer" : "noopener";
             link.target = "_blank";
-            link.rel = link.rel ? link.rel + " noopener noreferrer" : "noopener noreferrer";
+            link.rel = link.rel ? link.rel + " " + rel : rel;
         });
 
         const entries = document.querySelectorAll(".paper-list details");
