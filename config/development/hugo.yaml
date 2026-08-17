@@ -1,0 +1,14 @@
+# Development-only overrides, merged on top of the root hugo.yaml.
+#
+# `hugo server` runs in the development environment; the deploy workflow sets
+# HUGO_ENVIRONMENT=production, and a bare `hugo` defaults to production. So
+# anything here applies to local previews only.
+#
+# Blanking the measurement ID stops Google Analytics from loading locally.
+# Hugo's analytics partial emits nothing when the ID is empty, which is a
+# cleaner switch than gating the partial itself. Without this the tag would
+# load in preview, because params.env in the root config is "production" and
+# the theme treats that as production regardless of the real environment.
+services:
+  googleAnalytics:
+    ID: ""

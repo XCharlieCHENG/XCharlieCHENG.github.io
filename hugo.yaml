@@ -16,6 +16,19 @@ minify:
   disableXML: true
   minifyOutput: true
 
+# Google Analytics 4. The measurement ID is public by design; it ships in the
+# page source of every site that uses it. This is the same property the Google
+# Sites version reports to, so the traffic history carries across the move.
+#
+# The theme emits the tag whenever hugo.IsProduction OR params.env is
+# "production", and params.env below is set to "production" unconditionally, so
+# the tag would otherwise load under `hugo server` too and record local
+# browsing as real visits. config/development/hugo.yaml blanks the ID for
+# development builds, which is what suppresses it.
+services:
+  googleAnalytics:
+    ID: G-JS83T5DML6
+
 params:
   env: production
   title: "Xiang (Charlie) Cheng"
