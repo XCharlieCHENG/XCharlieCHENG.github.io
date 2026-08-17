@@ -23,16 +23,6 @@ hideMeta: true
   </div>
 </div>
 
-## Contact
-
-Email: [xccheng@umd.edu](mailto:xccheng@umd.edu)
-
-[PhD Program Directory Page](https://www.rhsmith.umd.edu/directory/xiang-charlie-cheng)
-&nbsp;·&nbsp;
-[Google Scholar](https://scholar.google.com/citations?hl=en&user=IRNpDrIAAAAJ)
-&nbsp;·&nbsp;
-[LinkedIn](https://www.linkedin.com/in/xiang-charlie-cheng)
-
 ## Curriculum Vitae
 
 [Download as PDF](/files/CV.pdf)

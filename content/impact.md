@@ -13,15 +13,12 @@ hideMeta: true
 
 ## Conference Presentations
 
-**2026** · ACM Collective Intelligence · BizAI · Fisher AI in Business · POMS ·
-WAICI · UMD Smith IS PhD Research Presentation
+**2026** · ACM Collective Intelligence · Fisher AI in Business · WAICI
 
-**2025** · AI and the Future of Work at Wharton · AI Lightning Talks at UMD
-Smith · AI/ML · BizAI · Business and Generative AI at Wharton · CIST · ICIS ·
-INFORMS Annual Meeting · INFORMS Workshop on Data Science · SCECR · WAICI ·
-WISE · WITS
+**2025** · AI Lightning Talks at UMD Smith · AI/ML · BizAI · CIST · ICIS ·
+INFORMS Annual Meeting · INFORMS Workshop on Data Science · WAICI · WITS
 
-**2024** · WITS
+**2024** · WISE · WITS
 
 ## Academic Service
 
