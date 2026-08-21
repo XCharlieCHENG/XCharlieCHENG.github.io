@@ -10,12 +10,12 @@ hideMeta: true
 Instructor, Fall 2026
 
 The course covers the programming and artificial intelligence skills that
-business analytics work requires. The Fall 2026 section enrolls 22 students.
+business analytics work requires.
 
 ---
 
 ### AI Bootcamp for MBAs
 
-Lecturer, September 2026
+Guest instructor, September 2026
 
 A short course introducing incoming Smith MBA students to agentic AI.
