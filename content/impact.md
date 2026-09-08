@@ -24,7 +24,7 @@ INFORMS Annual Meeting · INFORMS Workshop on Data Science · WAICI · WITS
 
 - Journal reviewer, *Information Systems Research* · 2025 to present
 - Conference reviewer, International Conference on Information Systems (ICIS) · 2025, 2026
-- Conference reviewer, Workshop on Information Technologies and Systems (WITS) · 2025
+- Conference reviewer, Workshop on Information Technologies and Systems (WITS) · 2025, 2026
 - Conference reviewer, Hawaii International Conference on System Sciences (HICSS) · 2024
 
 ## Elsewhere
