@@ -1,0 +1,21 @@
+% TeX Live 2023 compatibility shim for building the CV locally.
+%
+% Overleaf compiles the CV with TeX Live 2023, and this machine runs TeX Live
+% 2025. Longtable 4.19 (2023/12) moves the zero-width strut that opens every
+% p-column cell into \everypar, so a cell that opens with \color or a space no
+% longer starts its paragraph at the top of the cell and gains a blank strut
+% line. This file restores the earlier definition of \LT@startpbox.
+%
+% Roll the kernel back first, and never edit main.tex:
+%   pdflatex -jobname=main \
+%     '\RequirePackage[2023-11-01]{latexrelease}\input{tl23compat}\input{main}'
+\makeatletter
+\def\cvLTstartpbox#1{%
+  \bgroup
+    \color@begingroup
+    \let\@footnotetext\LT@p@ftntext
+    \setlength\hsize{#1}%
+    \@arrayparboxrestore
+    \vrule \@height \ht\@arstrutbox \@width \z@}
+\AddToHook{package/longtable/after}{\let\LT@startpbox\cvLTstartpbox}
+\makeatother

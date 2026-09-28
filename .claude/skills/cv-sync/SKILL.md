@@ -2,20 +2,24 @@
 name: cv-sync
 description: >-
   Use when a new CV lands and the website has to catch up, in phrasings like
-  "i have an updated CV (see Downloads folder of my mac)", "sync my CV to the
-  site", "update the website from my new CV", "I added a presentation, put it
-  on the site", "the SILICON paper got a major revision, update my site",
-  "update everywhere (Research and Teaching and Impact)", "did I miss anything
-  from the CV on the website", or "check the site against my CV". Diffs the
-  incoming CV PDF against static/files/CV.pdf, which is the last-synced
-  baseline, classifies every hunk as an expected change to apply directly or an
+  "pull from github and download the newest CV, and update my site", "i have
+  an updated CV (see Downloads folder of my mac)", "sync my CV to the site",
+  "update the website from my new CV", "I added a presentation, put it on the
+  site", "the SILICON paper got a major revision, update my site", "update
+  everywhere (Research and Teaching and Impact)", "did I miss anything from
+  the CV on the website", or "check the site against my CV". Builds the CV
+  from its GitHub source (XCharlieCHENG/CV, which Overleaf pushes to), diffs
+  it against static/files/CV.pdf, which is the last-synced baseline,
+  classifies every hunk as an expected change to apply directly or an
   unexpected one to confirm first, applies the expected ones across
   content/research.md, content/teaching.md, content/impact.md and
   content/cv.md, runs a full CV-against-site reconciliation sweep so nothing
   drifts, replaces the deployed PDF, and builds. Do NOT use for site design,
   layout, or CSS work, for writing a /misc post, or for the deploy itself
-  (README.md owns the git and GitHub Pages steps). Do NOT use to draft the CV
-  PDF; this skill reads the CV and never writes it.
+  (README.md owns the git and GitHub Pages steps). Do NOT hand the CV pull to
+  git-sync, which syncs manuscript repositories; this skill clones the CV
+  repository and never pushes to it. Do NOT use to draft the CV PDF; this
+  skill reads the CV and never writes it.
 ---
 
 # CV Sync
@@ -29,7 +33,8 @@ This skill owns the translation.
 | Object | Path |
 | --- | --- |
 | Site root | `~/Library/CloudStorage/GoogleDrive-xccheng@umd.edu/My Drive/Personal Website` |
-| Incoming CV | the newest `CV*.pdf` in `~/Downloads` |
+| CV source | `main.tex` in the GitHub repository `XCharlieCHENG/CV`, which Overleaf pushes to |
+| TeX Live 2023 shim for the local build | `.claude/skills/cv-sync/tl23compat.tex` |
 | Deployed CV, and the sync baseline | `static/files/CV.pdf` |
 | Research page | `content/research.md` |
 | Teaching page | `content/teaching.md` |
@@ -45,25 +50,69 @@ needed. The baseline moves only after every edit it implies has landed.
 The site root sits in Google Drive, so its path contains spaces and every shell
 reference needs quoting.
 
-## Procedure
+The numbered `CV (N).pdf` series in `~/Downloads` ends at `CV (16).pdf`, saved
+on Sep 27, 2026, before the first push to GitHub. The GitHub source of that day
+already revises its Teaching section. Use a Downloads PDF only when the user
+points to one.
 
-### 1. Find the incoming CV and confirm it is new
+## Building the PDF
+
+The repository holds `main.tex` and no PDF, so the sync builds one. Overleaf
+compiles this CV with TeX Live 2023, and this machine runs TeX Live 2025. A
+plain local build differs from Overleaf's in two places. Longtable 4.19 moves
+the strut that opens every table cell into `\everypar`, so a cell that opens
+with `\color`, as `\headingfont` and `\subheadingfont` do, gains a blank line.
+The 2024 kernel also places the block after a table that crosses a page break
+4pt lower. Together they push the CV to four pages and separate two headings
+from the entries below them.
+
+The build rolls the kernel back to 2023-11-01 and restores the old cell macro
+from `tl23compat.tex`. It leaves `main.tex` untouched:
 
 ```bash
-ls -t ~/Downloads/CV*.pdf | head -3
-md5 ~/Downloads/"CV (14).pdf" static/files/CV.pdf
+git clone --depth 1 https://github.com/XCharlieCHENG/CV.git "$SCRATCH/cv-repo"
+cd "$SCRATCH/cv-repo"
+cp "<site root>/.claude/skills/cv-sync/tl23compat.tex" .
+export SOURCE_DATE_EPOCH=$(git log -1 --format=%ct) FORCE_SOURCE_DATE=1
+for i in 1 2; do
+  pdflatex -interaction=nonstopmode -jobname=main \
+    '\RequirePackage[2023-11-01]{latexrelease}\input{tl23compat}\input{main}'
+done
 ```
 
-Downloads holds a numbered series (`CV (13).pdf`, `CV (14).pdf`), so take the
-newest by modification time and confirm the user means that one when two land
-on the same day. Equal hashes mean the site is already current; report that and
-stop.
+`SOURCE_DATE_EPOCH` takes the "Last Updated" month from the last commit, which
+is when the user last edited the CV, and makes the build byte-reproducible. The
+log carries two expected warnings from the rollback: tabularx requests the
+2024-06-01 kernel, and xcolor loads its 2022-06-12 release. `gh` is not
+authenticated on this machine, and plain `git` over HTTPS works through the
+keychain.
+
+The shim is verified against Overleaf's own PDF of Sep 27, 2026. With that
+day's Teaching block restored, the local build puts all 125 text lines on all
+three pages where Overleaf puts them. If the Overleaf project moves to a newer
+TeX Live (Menu, then Settings), compare one local build against an Overleaf
+download before dropping the shim.
+
+## Procedure
+
+### 1. Pull the source, build it, and confirm it is new
+
+Clone and build as in "Building the PDF", then compare:
+
+```bash
+git -C "$SCRATCH/cv-repo" log -1 --format='%h %ad %s' --date=iso
+md5 "$SCRATCH/cv-repo/main.pdf" static/files/CV.pdf
+```
+
+Equal hashes mean the site is already current; report that and stop. A TeX
+Live update also changes the bytes. The text diff in step 2 then comes back
+empty, and the sync reduces to step 7.
 
 ### 2. Extract both to text and diff
 
 ```bash
 pdftotext -layout static/files/CV.pdf "$SCRATCH/cv_old.txt"
-pdftotext -layout ~/Downloads/"CV (14).pdf" "$SCRATCH/cv_new.txt"
+pdftotext -layout "$SCRATCH/cv-repo/main.pdf" "$SCRATCH/cv_new.txt"
 diff -u "$SCRATCH/cv_old.txt" "$SCRATCH/cv_new.txt"
 ```
 
@@ -72,6 +121,18 @@ end. The diff alone is not enough for two reasons. A line whose text is
 unchanged can appear in the diff because a page break moved it across the "Last
 Updated" footer, and that is not a change. And the site can carry drift that
 predates this CV, which only the reconciliation sweep in step 6 finds.
+
+A second diff drops the layout, collapses whitespace, and removes the page
+furniture. A moved page break then returns nothing, and only content changes
+remain:
+
+```bash
+norm() { pdftotext "$1" - | sed -E 's/[[:space:]]+/ /g; s/^ //; s/ $//' | grep -vE '^([0-9]+|Last Updated.*)?$'; }
+diff <(norm static/files/CV.pdf) <(norm "$SCRATCH/cv-repo/main.pdf")
+```
+
+`main.tex` carries the `†` and `‡` markers as source. Its commented-out lines
+are not part of the CV and never reach the site.
 
 ### 3. Classify every hunk
 
@@ -113,11 +174,10 @@ made it. Walk the whole CV against all four pages:
 ### 7. Replace the deployed PDF
 
 ```bash
-cp ~/Downloads/"CV (14).pdf" static/files/CV.pdf
+cp "$SCRATCH/cv-repo/main.pdf" static/files/CV.pdf
 ```
 
-This is last, because the baseline is only true once the pages match it. Copy
-the file; do not move or rename the original in Downloads.
+This is last, because the baseline is only true once the pages match it.
 
 ### 8. Verify
 
@@ -171,8 +231,9 @@ files by name, never `git add -A`, and end the message with the
 Never invent content the CV does not carry. That covers abstracts, venue full
 names, dollar amounts, dates, and stream assignments. Ask instead.
 
-Never edit the CV PDF. This skill reads it and copies it, and the LaTeX source
-lives outside this repository.
+Never edit the CV PDF or `main.tex`. This skill builds the PDF from the GitHub
+source and copies it. The LaTeX source lives outside this repository, and the
+build adds only `tl23compat.tex`, loaded ahead of `main.tex`.
 
 ## Prose on the pages
 
