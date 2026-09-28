@@ -18,9 +18,10 @@ business analytics work requires.
 
 Guest instructor, Fall 2026
 
-A short course introducing incoming Smith MBA students to agentic AI for case
-analysis and to vibe coding for business applications. I teach two of its
-sessions, each in person and online.
+A short course introducing incoming Smith MBA students to agentic AI. I design
+and teach two sessions: (1) agentic AI for case analysis and (2) vibe coding
+for business applications. The course is offered twice, once in person and
+once online.
 
 ---
 
@@ -28,4 +29,4 @@ sessions, each in person and online.
 
 Guest instructor, Fall 2026
 
-I teach two sessions of this course.
+I am invited to teach two sessions of this course, both on agentic AI.
