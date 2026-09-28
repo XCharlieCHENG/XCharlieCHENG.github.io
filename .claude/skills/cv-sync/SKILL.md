@@ -191,12 +191,12 @@ preview through `preview_start` with the `charliecheng.cc` configuration in
 still open, and the embedded PDF on the CV page shows the new "Last Updated"
 month.
 
-### 9. Report
+### 9. Publish and report
 
-State what changed per file, with the absolute path and the modification time
-of each file written. Commit and push only when asked. When asked, stage the
-files by name, never `git add -A`, and end the message with the
-`Co-Authored-By` line.
+Commit and push to `main` without asking, per the standing instruction in the
+project `CLAUDE.md`. Stage the files by name, never `git add -A`, and end the
+message with the `Co-Authored-By` line. Then state what changed per file, with
+the absolute path and the modification time of each file written.
 
 ## Expected changes, applied without asking
 
