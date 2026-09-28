@@ -12,6 +12,8 @@ Instructor, Fall 2026
 The course covers the programming and artificial intelligence skills that
 business analytics work requires.
 
+[Syllabus and schedule (PDF)](/files/BMGT302_Fall2026_Syllabus_and_Schedule.pdf)
+
 ---
 
 ### MBA AI Bootcamp

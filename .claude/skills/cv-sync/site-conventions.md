@@ -59,6 +59,10 @@ paragraph of one or two sentences. Entries are separated by `---`.
 The CV writes teaching as bullets. The site writes prose, so a CV bullet is
 rewritten into a sentence and never pasted in as a fragment.
 
+A course entry can end with a link to its syllabus PDF in `static/files/`. No
+CV field feeds it, and a sync leaves it alone. `tools/syllabus_pdf.py` rebuilds
+the BMGT 302 file from the Markdown in the course folder.
+
 ## Impact page, `content/impact.md`
 
 Honors and Grants lists the UMD era only. The two Renmin University awards on
