@@ -13,7 +13,7 @@ hideMeta: true
 
 ## Conference Presentations
 
-**2026** · ACM Collective Intelligence · CIST · Fisher AI in Business · WAICI · WISE
+**2026** · ACM Collective Intelligence · CIST · CODE@MIT · Fisher AI in Business · WAICI · WISE
 
 **2025** · AI Lightning Talks at UMD Smith · AI/ML · BizAI · CIST · ICIS ·
 INFORMS Annual Meeting · INFORMS Workshop on Data Science · WAICI · WITS

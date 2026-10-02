@@ -31,7 +31,7 @@ services:
 
 params:
   title: "Xiang (Charlie) Cheng"
-  description: "Xiang Cheng (Charlie) is a Ph.D. student in Information Systems at the Robert H. Smith School of Business, University of Maryland, College Park. His research covers the economic impacts and business applications of generative AI."
+  description: "Xiang Cheng (Charlie) is a Ph.D. candidate in Information Systems at the Robert H. Smith School of Business, University of Maryland, College Park. His research covers the economic impacts and business applications of generative AI."
   author: "Xiang Cheng"
   keywords:
     - generative AI
@@ -59,7 +59,7 @@ params:
     enabled: true
     title: "Xiang (Charlie) Cheng"
     subtitle: |
-      I am a Ph.D. student in Information Systems at the [Robert H. Smith School of Business](https://www.rhsmith.umd.edu/), [University of Maryland, College Park](https://umd.edu/).
+      I am a Ph.D. candidate in Information Systems at the [Robert H. Smith School of Business](https://www.rhsmith.umd.edu/), [University of Maryland, College Park](https://umd.edu/).
 
       I work on the economics of generative AI and AI agents, and on large language models as instruments for research and decision-making.
     imageUrl: "images/charlie.jpg"

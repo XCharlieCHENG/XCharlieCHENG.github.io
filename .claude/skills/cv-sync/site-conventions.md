@@ -107,6 +107,7 @@ Venue short names, extended as new venues arrive:
 | Conference on AI, ML, and Business Analytics (AI/ML) | AI/ML |
 | Biz AI Conference at The University of Texas at Dallas (BizAI) | BizAI |
 | Conference on Information Systems and Technology (CIST) | CIST |
+| Conference on Digital Experimentation (CODE@MIT) | CODE@MIT |
 | Fisher AI in Business Conference | Fisher AI in Business |
 | International Conference on Information Systems (ICIS) | ICIS |
 | INFORMS Annual Meeting | INFORMS Annual Meeting |
